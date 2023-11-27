@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+}
+
+.hollow {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#sketch {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+.loader-screen {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.5s;
+  background: black;
+}
+
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.loading {
+  color: white;
+  font-size: 1.875rem;
+  letter-spacing: 0.1em;
+}
+
+.loading span {
+  animation: blur 1.5s calc(var(--i) / 5 * 1s) alternate infinite;
+}
+
+@keyframes blur {
+  to {
+    filter: blur(2px);
+  }
+}
